@@ -37,13 +37,13 @@ class Signup extends CI_Controller {
             $post_data = array('username'=> $name,'user_id'=>$userId,'email'=>$email,'password'=>$password);
             $this->db->insert('user',$post_data);
             $this->db->insert_id();
-            echo json_encode(
+            $access_token = password_hash($userId,PASSWORD_BCRYPT);
+            echo json_encode (
                 ['success'=>true,'message'=>"user successfully created", 'data' =>
                  ['name'=> $name,'email' =>$email,'userId' =>$userId]]
             );
         }else{
-            echo json_encode($errors
-        );
+            echo json_encode($errors);
         }
 
 

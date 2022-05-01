@@ -53,9 +53,12 @@ $route['default_controller'] = 'Welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-//cistpm routes..
+//cistpm routes...
 $route['signup']['GET'] = 'Signup/index';
 $route['signup']['POST'] = 'Signup/create';
-
+//
 $route['login']['GET'] = 'Login/index';
 $route['login']['POST'] = 'Login/find';
+
+$route['getuserprofile']['POST'] = 'GetUserProfile/find';
+$route['getalluser']['POST'] = 'Getalluser/find';
